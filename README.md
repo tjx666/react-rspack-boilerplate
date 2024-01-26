@@ -29,3 +29,9 @@ pnpm build
 ```bash
 pnpm build:analyze
 ```
+
+## Related
+
+- [React Webpack Boilerplate](https://github.com/tjx666/react-webpack-boilerplate)
+- [Rspack](https://www.rspack.dev/)
+- [Rsdoctor](https://rsdoctor.dev/)
