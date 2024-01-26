@@ -2,12 +2,12 @@
 
 [![ci](https://github.com/tjx666/react-rspack-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/tjx666/react-rspack-boilerplate/actions/workflows/ci.yml)
 
-use modern tech to configure react + webpack
+`React` boilerplate powered by [rspack](https://github.com/web-infra-dev/rspack) 🚀.
 
 ## Install
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## Usage
@@ -15,17 +15,17 @@ npm install
 ### Development
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ### Build
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ### Analyze bundle
 
 ```bash
-npm run build:analyze
+pnpm build:analyze
 ```
