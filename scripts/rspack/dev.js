@@ -13,9 +13,6 @@ const devConfig = defineConfig({
     experiments: {
         // doesn't with latest rspack
         // lazyCompilation: true,
-        rspackFuture: {
-            newTreeshaking: true,
-        },
     },
     plugins: [new ReactRefreshPlugin()],
 });

@@ -11,6 +11,11 @@ const prodConfig = defineConfig({
     //     // 2MiB
     //     maxEntrypointSize: 1024 * 1024 * 2,
     // },
+    experiments: {
+        rspackFuture: {
+            newTreeshaking: true,
+        },
+    },
     optimization: {
         runtimeChunk: {
             name: 'runtime',

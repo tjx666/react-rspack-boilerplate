@@ -7,6 +7,16 @@ import { isDev } from './utils.js';
 
 const inCwd = (relativePath) => resolve(import.meta.dirname, '../../', relativePath);
 
+const postcssLoader = {
+    loader: 'postcss-loader',
+    options: {
+        sourceMap: isDev,
+        postcssOptions: {
+            plugins: isDev ? [] : [['postcss-preset-env']],
+        },
+    },
+};
+
 export default defineConfig({
     target: ['web', 'es5'],
     entry: inCwd('src/index.tsx'),
@@ -57,6 +67,7 @@ export default defineConfig({
             {
                 test: /\.css$/,
                 type: 'css',
+                use: [postcssLoader],
             },
             {
                 test: /\.scss$/,
@@ -65,9 +76,10 @@ export default defineConfig({
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true,
+                            sourceMap: isDev,
                         },
                     },
+                    postcssLoader,
                 ],
             },
 
