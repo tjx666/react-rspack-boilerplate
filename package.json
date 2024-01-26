@@ -51,6 +51,7 @@
         "@types/node": "^20.11.7",
         "@types/react": "^18.2.48",
         "@types/react-dom": "^18.2.18",
+        "@types/webpack-env": "^1.18.4",
         "@yutengjing/eslint-config-react": "^0.5.2",
         "@yutengjing/prettier-config": "^1.0.0",
         "@yutengjing/stylelint-config-basic": "^0.1.0",
