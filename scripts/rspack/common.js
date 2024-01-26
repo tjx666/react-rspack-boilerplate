@@ -23,6 +23,7 @@ export default defineConfig({
     output: {
         clean: true,
         path: inCwd('dist'),
+        filename: '[name]-[hash].js',
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts'],
