@@ -23,7 +23,7 @@ export default defineConfig({
     output: {
         clean: true,
         path: inCwd('dist'),
-        filename: '[name]-[hash].js',
+        filename: '[name]-[contenthash].js',
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts'],
@@ -93,28 +93,28 @@ export default defineConfig({
                     },
                 },
                 generator: {
-                    filename: 'images/[hash][ext]',
+                    filename: 'images/[contenthash][ext]',
                 },
             },
             {
                 test: /\.(mp3|wav|flac|aac|ogg|aiff)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'audios/[hash][ext]',
+                    filename: 'audios/[contenthash][ext]',
                 },
             },
             {
                 test: /\.(mp4|mov|avi|flv|mkv|wmv)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'videos/[hash][ext]',
+                    filename: 'videos/[contenthash][ext]',
                 },
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'fonts/[hash][ext]',
+                    filename: 'fonts/[contenthash][ext]',
                 },
             },
         ],
