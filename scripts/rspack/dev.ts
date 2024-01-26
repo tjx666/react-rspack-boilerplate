@@ -8,11 +8,7 @@ const devConfig = defineConfig({
     mode: 'development',
     devtool: 'eval-source-map',
     experiments: {
-        lazyCompilation: true,
-        rspackFuture: {
-            // @ts-expect-error ...
-            disableTransformByDefault: true,
-        },
+        lazyCompilation: true
     },
     // @ts-expect-error ...
     plugins: [new ReactRefreshPlugin()],
