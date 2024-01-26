@@ -1,4 +1,8 @@
 {
     "extends": "@yutengjing/tsconfig-node",
-    "include": ["./**/*.ts"],
+    "compilerOptions": {
+        "checkJs": true,
+        "noImplicitAny": false,
+    },
+    "include": ["./**/*.js"],
 }

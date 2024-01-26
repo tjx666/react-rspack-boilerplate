@@ -5,6 +5,21 @@
     "eslintConfig": {
         "extends": [
             "@yutengjing/eslint-config-react"
+        ],
+        "overrides": [
+            {
+                "files": [
+                    "scripts/**/*.js"
+                ],
+                "rules": {
+                    "import/extensions": [
+                        2,
+                        {
+                            "js": "always"
+                        }
+                    ]
+                }
+            }
         ]
     },
     "stylelint": {
@@ -12,10 +27,15 @@
     },
     "prettier": "@yutengjing/prettier-config",
     "scripts": {
-        "dev": "rspack serve --node-env development -c scripts/rspack/dev.ts",
-        "build": "rspack build --node-env production -c scripts/rspack/prod.ts",
-        "build:analyze": "rspack build --node-env production -c scripts/rspack/analyze.ts",
+        "dev": "rspack serve --node-env development -c scripts/rspack/dev.js",
+        "build": "rspack build --node-env production -c scripts/rspack/prod.js",
+        "build:analyze": "rspack build --node-env production -c scripts/rspack/analyze.js",
         "check:type": "tsc -b tsconfig.check.json"
+    },
+    "pnpm": {
+        "overrides": {
+            "@rspack/core": "0.5.2"
+        }
     },
     "dependencies": {
         "antd": "^5.13.2",

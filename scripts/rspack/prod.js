@@ -2,22 +2,22 @@ import { defineConfig } from '@rspack/cli';
 import rspack from '@rspack/core';
 import { merge } from 'webpack-merge';
 
-import commonConfig from './common';
+import commonConfig from './common.js';
 
 const prodConfig = defineConfig({
     mode: 'production',
-    // @ts-expect-error ...
-    performance: {
-        // 2MiB
-        maxEntrypointSize: 1024 * 1024 * 2,
-    },
+    devtool: false,
+    // performance: {
+    //     // 2MiB
+    //     maxEntrypointSize: 1024 * 1024 * 2,
+    // },
     optimization: {
         runtimeChunk: {
-            // @ts-expect-error ...
-            name: (entrypoint) => `runtime-${entrypoint.name}`,
+            name: 'runtime',
         },
         splitChunks: {
             cacheGroups: {
+                // when use with rsdoctor, will not generate this chunk
                 lib: {
                     test: /[/\\]node_modules[/\\](react|react-dom|antd)[/\\]/,
                     name: 'lib',

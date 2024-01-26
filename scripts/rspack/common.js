@@ -3,9 +3,9 @@ import { resolve } from 'node:path';
 import { defineConfig } from '@rspack/cli';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import { isDev, type RspackPluginInstance } from './utils';
+import { isDev } from './utils.js';
 
-const inCwd = (relativePath: string) => resolve(import.meta.dirname, '../../', relativePath);
+const inCwd = (relativePath) => resolve(import.meta.dirname, '../../', relativePath);
 
 export default defineConfig({
     target: ['web', 'es5'],
@@ -18,9 +18,10 @@ export default defineConfig({
         extensions: ['.js', '.tsx', '.ts'],
     },
     plugins: [
+        // @ts-expect-error ...
         new HtmlWebpackPlugin({
             template: inCwd('public/index.html'),
-        }) as unknown as RspackPluginInstance,
+        }),
     ],
     module: {
         rules: [
