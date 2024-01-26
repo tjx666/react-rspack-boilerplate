@@ -7,8 +7,15 @@ import commonConfig from './common.js';
 const devConfig = defineConfig({
     mode: 'development',
     devtool: 'eval-source-map',
+    devServer: {
+        port: 3000,
+    },
     experiments: {
-        lazyCompilation: true,
+        // doesn't with latest rspack
+        // lazyCompilation: true,
+        rspackFuture: {
+            newTreeshaking: true,
+        },
     },
     plugins: [new ReactRefreshPlugin()],
 });

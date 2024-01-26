@@ -17,7 +17,6 @@ const prodConfig = defineConfig({
         },
         splitChunks: {
             cacheGroups: {
-                // when use with rsdoctor, will not generate this chunk
                 lib: {
                     test: /[/\\]node_modules[/\\](react|react-dom|antd)[/\\]/,
                     name: 'lib',

@@ -47,6 +47,7 @@
         "@rspack/cli": "^0.5.2",
         "@rspack/core": "^0.5.2",
         "@rspack/plugin-react-refresh": "^0.5.2",
+        "@swc/helpers": "^0.5.3",
         "@types/node": "^20.11.7",
         "@types/react": "^18.2.48",
         "@types/react-dom": "^18.2.18",
