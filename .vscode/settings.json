@@ -1,0 +1,18 @@
+{
+    // use stylelint instead
+    "css.validate": false,
+
+    // support lint json etc
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "jsonc",
+        "markdown",
+        "yml",
+        "yaml",
+        "html"
+    ]
+}

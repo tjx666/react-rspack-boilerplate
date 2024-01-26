@@ -1,0 +1,50 @@
+{
+    "name": "react-rspack-boilerplate",
+    "private": "true",
+    "type": "module",
+    "eslintConfig": {
+        "extends": [
+            "@yutengjing/eslint-config-react"
+        ]
+    },
+    "stylelint": {
+        "extends": "@yutengjing/stylelint-config-basic"
+    },
+    "prettier": "@yutengjing/prettier-config",
+    "scripts": {
+        "dev": "rspack serve --node-env development -c scripts/rspack/dev.ts",
+        "build": "rspack build --node-env production -c scripts/rspack/prod.ts",
+        "build:analyze": "rspack build --node-env production -c scripts/rspack/analyze.ts",
+        "check:type": "tsc -b tsconfig.check.json"
+    },
+    "dependencies": {
+        "antd": "^5.13.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@rsdoctor/webpack-plugin": "^0.1.0",
+        "@rspack/cli": "^0.5.2",
+        "@rspack/core": "^0.5.2",
+        "@rspack/plugin-react-refresh": "^0.5.2",
+        "@types/node": "^20.11.7",
+        "@types/react": "^18.2.48",
+        "@types/react-dom": "^18.2.18",
+        "@yutengjing/eslint-config-react": "^0.5.2",
+        "@yutengjing/prettier-config": "^1.0.0",
+        "@yutengjing/stylelint-config-basic": "^0.1.0",
+        "@yutengjing/tsconfig-node": "^0.0.5",
+        "@yutengjing/tsconfig-react": "^0.0.5",
+        "eslint": "^8.56.0",
+        "html-webpack-plugin": "^5.6.0",
+        "prettier": "^3.2.4",
+        "react-refresh": "^0.14.0",
+        "sass": "^1.70.0",
+        "sass-loader": "^14.0.0",
+        "stylelint": "^16.2.0",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.3",
+        "webpack-merge": "^5.10.0"
+    }
+}

@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: ['**']
+
+jobs:
+  check-type:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Check Type
+        run: npm run check:type
