@@ -10,10 +10,11 @@ import commonConfig from './common.js';
 const prodConfig = defineConfig({
     mode: 'production',
     devtool: false,
-    performance: {
-        // 2MiB
-        maxEntrypointSize: 1024 * 1024 * 2,
-    },
+    // rspack seems still not support
+    // performance: {
+    //     // 2MiB
+    //     maxEntrypointSize: 1024 * 1024 * 2,
+    // },
     experiments: {
         rspackFuture: {
             newTreeshaking: true,
@@ -29,11 +30,13 @@ const prodConfig = defineConfig({
                     test: /[/\\]node_modules[/\\](react|react-dom|antd)[/\\]/,
                     name: 'lib',
                     chunks: 'all',
+                    priority: 100,
                 },
                 vendor: {
                     test: /[/\\]node_modules[/\\]/,
                     name: 'vendor',
                     chunks: 'all',
+                    priority: 1,
                 },
             },
         },

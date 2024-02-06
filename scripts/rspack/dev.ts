@@ -14,6 +14,7 @@ const devConfig = defineConfig({
         },
     },
     experiments: {
+        // will cause page can't be loaded
         // lazyCompilation: true,
     },
     plugins: [new ReactRefreshPlugin()],
