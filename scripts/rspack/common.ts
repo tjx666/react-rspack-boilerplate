@@ -1,7 +1,7 @@
 import { resolve } from 'node:path';
+import rspack from '@rspack/core';
 
 import { defineConfig } from '@rspack/cli';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { Config as SwcConfig } from '@swc/core';
 
 import { isDev } from './utils.js';
@@ -30,8 +30,7 @@ export default defineConfig({
         extensions: ['.js', '.tsx', '.ts'],
     },
     plugins: [
-        // @ts-expect-error ...
-        new HtmlWebpackPlugin({
+        new rspack.HtmlRspackPlugin({
             template: inCwd('public/index.html'),
         }),
     ],
