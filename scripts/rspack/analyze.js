@@ -1,11 +1,11 @@
-import { RsdoctorWebpackPlugin } from '@rsdoctor/webpack-plugin';
+import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { defineConfig } from '@rspack/cli';
 import { merge } from 'webpack-merge';
 
 import prodConfig from './prod.js';
 
 const analyzeConfig = defineConfig({
-    plugins: [new RsdoctorWebpackPlugin({})],
+    plugins: [new RsdoctorRspackPlugin({})],
 });
 
 console.log('analyze mode!');

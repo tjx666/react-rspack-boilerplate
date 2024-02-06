@@ -2,26 +2,6 @@
     "name": "react-rspack-boilerplate",
     "private": "true",
     "type": "module",
-    "eslintConfig": {
-        "extends": [
-            "@yutengjing/eslint-config-react"
-        ],
-        "overrides": [
-            {
-                "files": [
-                    "scripts/**/*.js"
-                ],
-                "rules": {
-                    "import/extensions": [
-                        2,
-                        {
-                            "js": "always"
-                        }
-                    ]
-                }
-            }
-        ]
-    },
     "stylelint": {
         "extends": "@yutengjing/stylelint-config-basic"
     },
@@ -32,24 +12,19 @@
         "build:analyze": "rspack build --node-env production -c scripts/rspack/analyze.js",
         "check:type": "tsc -b tsconfig.check.json"
     },
-    "pnpm": {
-        "overrides": {
-            "@rspack/core": "0.5.2"
-        }
-    },
     "dependencies": {
-        "antd": "^5.13.2",
+        "antd": "^5.14.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@rsdoctor/webpack-plugin": "^0.1.0",
-        "@rspack/cli": "^0.5.2",
-        "@rspack/core": "^0.5.2",
-        "@rspack/plugin-react-refresh": "^0.5.2",
-        "@swc/helpers": "^0.5.3",
-        "@types/node": "^20.11.7",
-        "@types/react": "^18.2.48",
+        "@rsdoctor/rspack-plugin": "^0.1.1",
+        "@rspack/cli": "^0.5.3",
+        "@rspack/core": "^0.5.3",
+        "@rspack/plugin-react-refresh": "^0.5.3",
+        "@swc/helpers": "^0.5.6",
+        "@types/node": "^20.11.16",
+        "@types/react": "^18.2.54",
         "@types/react-dom": "^18.2.18",
         "@types/webpack-env": "^1.18.4",
         "@yutengjing/eslint-config-react": "^0.5.2",
@@ -58,15 +33,16 @@
         "@yutengjing/tsconfig-node": "^0.0.5",
         "@yutengjing/tsconfig-react": "^0.0.5",
         "eslint": "^8.56.0",
+        "eslint-define-config": "^2.1.0",
         "html-webpack-plugin": "^5.6.0",
-        "postcss": "^8.4.33",
-        "postcss-loader": "^8.0.0",
+        "postcss": "^8.4.34",
+        "postcss-loader": "^8.1.0",
         "postcss-preset-env": "^9.3.0",
-        "prettier": "^3.2.4",
+        "prettier": "^3.2.5",
         "react-refresh": "^0.14.0",
         "sass": "^1.70.0",
-        "sass-loader": "^14.0.0",
-        "stylelint": "^16.2.0",
+        "sass-loader": "^14.1.0",
+        "stylelint": "^16.2.1",
         "typescript": "^5.3.3",
         "webpack-merge": "^5.10.0"
     }
