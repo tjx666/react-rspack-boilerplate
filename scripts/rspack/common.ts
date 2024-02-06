@@ -14,7 +14,8 @@ export default defineConfig({
     output: {
         clean: true,
         path: inCwd('dist'),
-        filename: '[name]-[contenthash].js',
+        // https://github.com/web-infra-dev/rspack/issues/5624
+        filename: `[name]-${isDev ? 'bundle' : '[contenthash]'}.js`,
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts'],
