@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import { isDev } from './utils.js';
 
-const inCwd = (relativePath) => resolve(import.meta.dirname, '../../', relativePath);
+const inCwd = (relativePath: string) => resolve(import.meta.dirname, '../../', relativePath);
 
 const postcssLoader = {
     loader: 'postcss-loader',

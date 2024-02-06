@@ -7,9 +7,9 @@
     },
     "prettier": "@yutengjing/prettier-config",
     "scripts": {
-        "dev": "rspack serve --node-env development -c scripts/rspack/dev.js",
-        "build": "rspack build --node-env production -c scripts/rspack/prod.js",
-        "build:analyze": "rspack build --node-env production -c scripts/rspack/analyze.js",
+        "dev": "NODE_OPTIONS=\"--import tsx\" rspack serve --node-env development -c scripts/rspack/dev.ts",
+        "build": "NODE_OPTIONS=\"--import tsx\" rspack build --node-env production -c scripts/rspack/prod.ts",
+        "build:analyze": "NODE_OPTIONS=\"--import tsx\" rspack build --node-env production -c scripts/rspack/analyze.ts",
         "check:type": "tsc -b tsconfig.check.json"
     },
     "dependencies": {
@@ -43,6 +43,7 @@
         "sass": "^1.70.0",
         "sass-loader": "^14.1.0",
         "stylelint": "^16.2.1",
+        "tsx": "^4.7.0",
         "typescript": "^5.3.3",
         "webpack-merge": "^5.10.0"
     }
