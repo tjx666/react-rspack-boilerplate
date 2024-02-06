@@ -17,6 +17,7 @@
         "dev": "NODE_OPTIONS=\"--import tsx\" rspack serve --node-env development -c scripts/rspack/dev.ts",
         "build": "NODE_OPTIONS=\"--import tsx\" rspack build --node-env production -c scripts/rspack/prod.ts",
         "build:analyze": "NODE_OPTIONS=\"--import tsx\" rspack build --node-env production -c scripts/rspack/analyze.ts",
+        "lint": "pnpm run /^lint:/",
         "lint:type": "tsc -b tsconfig.check.json",
         "lint:eslint": "eslint .",
         "lint:stylelint": "stylelint src/**/*.{css,scss}",
