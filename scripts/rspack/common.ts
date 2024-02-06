@@ -1,7 +1,7 @@
 import { resolve } from 'node:path';
-import rspack from '@rspack/core';
 
 import { defineConfig } from '@rspack/cli';
+import rspack from '@rspack/core';
 import type { Config as SwcConfig } from '@swc/core';
 
 import { isDev } from './utils.js';

@@ -1,9 +1,9 @@
 import { defineConfig } from '@rspack/cli';
 import rspack from '@rspack/core';
-import { merge } from 'webpack-merge';
+import browserslist from 'browserslist';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import * as lightningcss from 'lightningcss';
-import browserslist from 'browserslist';
+import { merge } from 'webpack-merge';
 
 import commonConfig from './common.js';
 
@@ -40,11 +40,11 @@ const prodConfig = defineConfig({
         minimize: true,
         minimizer: [
             new rspack.SwcJsMinimizerRspackPlugin(),
-            // @ts-expect-error
+            // @ts-expect-error wait to be fixed
             new CssMinimizerPlugin({
                 minify: CssMinimizerPlugin.lightningCssMinify,
                 minimizerOptions: {
-                    // @ts-expect-error
+                    // @ts-expect-error wait to be fixed
                     targets: lightningcss.browserslistToTargets(browserslist()),
                 },
             }),

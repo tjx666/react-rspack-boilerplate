@@ -1,6 +1,7 @@
 {
     // use stylelint instead
     "css.validate": false,
+    "stylelint.validate": ["css", "scss"],
 
     // support lint json etc
     "eslint.validate": [
