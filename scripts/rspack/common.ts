@@ -2,6 +2,7 @@ import { resolve } from 'node:path';
 
 import { defineConfig } from '@rspack/cli';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import type { Config as SwcConfig } from '@swc/core';
 
 import { isDev } from './utils.js';
 
@@ -42,7 +43,7 @@ export default defineConfig({
                 use: {
                     loader: 'builtin:swc-loader',
                     options: {
-                        sourceMap: isDev,
+                        sourceMaps: isDev,
                         jsc: {
                             parser: {
                                 syntax: 'typescript',
@@ -62,7 +63,7 @@ export default defineConfig({
                         env: {
                             targets: isDev ? 'Chrome >= 120' : 'Chrome >= 64',
                         },
-                    },
+                    } satisfies SwcConfig,
                 },
             },
             {
@@ -83,7 +84,6 @@ export default defineConfig({
                     postcssLoader,
                 ],
             },
-
             {
                 test: /\.(bmp|png|apng|jpg|jpeg|gif|svg|webp|avif|heif|jxl)$/,
                 type: 'asset/resource',
