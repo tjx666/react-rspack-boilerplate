@@ -2,6 +2,9 @@
     "name": "react-rspack-boilerplate",
     "private": "true",
     "type": "module",
+    "eslintConfig": {
+        "extends": "@yutengjing/eslint-config-react"
+    },
     "stylelint": {
         "extends": "@yutengjing/stylelint-config-basic"
     },
