@@ -1,16 +1,19 @@
 import { defineConfig } from '@rspack/cli';
 import rspack from '@rspack/core';
 import { merge } from 'webpack-merge';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import * as lightningcss from 'lightningcss';
+import browserslist from 'browserslist';
 
 import commonConfig from './common.js';
 
 const prodConfig = defineConfig({
     mode: 'production',
     devtool: false,
-    // performance: {
-    //     // 2MiB
-    //     maxEntrypointSize: 1024 * 1024 * 2,
-    // },
+    performance: {
+        // 2MiB
+        maxEntrypointSize: 1024 * 1024 * 2,
+    },
     experiments: {
         rspackFuture: {
             newTreeshaking: true,
@@ -37,7 +40,14 @@ const prodConfig = defineConfig({
         minimize: true,
         minimizer: [
             new rspack.SwcJsMinimizerRspackPlugin(),
-            new rspack.SwcCssMinimizerRspackPlugin(),
+            // @ts-expect-error
+            new CssMinimizerPlugin({
+                minify: CssMinimizerPlugin.lightningCssMinify,
+                minimizerOptions: {
+                    // @ts-expect-error
+                    targets: lightningcss.browserslistToTargets(browserslist()),
+                },
+            }),
         ],
     },
 });

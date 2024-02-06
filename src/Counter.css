@@ -1,9 +1,9 @@
 .counter {
-    width: 600px;
-    margin: 60px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 600px;
+    margin: 60px auto;
 
     .count {
         font-size: 24px;

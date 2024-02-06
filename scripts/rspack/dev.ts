@@ -11,7 +11,6 @@ const devConfig = defineConfig({
         port: 3000,
     },
     experiments: {
-        // doesn't with latest rspack
         // lazyCompilation: true,
     },
     plugins: [new ReactRefreshPlugin()],
