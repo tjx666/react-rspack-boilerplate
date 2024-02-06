@@ -9,6 +9,9 @@ const devConfig = defineConfig({
     devtool: 'eval-source-map',
     devServer: {
         port: 3000,
+        client: {
+            logging: 'warn',
+        },
     },
     experiments: {
         // lazyCompilation: true,
