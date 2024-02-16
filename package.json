@@ -21,7 +21,10 @@
         "lint:type": "tsc -b tsconfig.check.json",
         "lint:eslint": "eslint .",
         "lint:stylelint": "stylelint src/**/*.{css,scss}",
-        "lint:format": "prettier . --check"
+        "lint:format": "prettier . --check",
+        "check-compat": "pnpm run /^check-compat:/",
+        "check-compat:js": "check-es-compat ./dist",
+        "check-compat:css": "tsx ./scripts/check-css-compat.ts"
     },
     "dependencies": {
         "antd": "^5.14.0",
@@ -45,7 +48,9 @@
         "@yutengjing/tsconfig-node": "^0.0.5",
         "@yutengjing/tsconfig-react": "^0.0.5",
         "browserslist": "^4.22.3",
+        "check-es-compat": "^3.2.0",
         "css-minimizer-webpack-plugin": "^6.0.0",
+        "doiuse": "^6.0.2",
         "eslint": "^8.56.0",
         "eslint-define-config": "^2.1.0",
         "html-webpack-plugin": "^5.6.0",
@@ -55,6 +60,7 @@
         "sass": "^1.70.0",
         "sass-loader": "^14.1.0",
         "stylelint": "^16.2.1",
+        "stylelint-no-unsupported-browser-features": "^8.0.1",
         "tsx": "^4.7.0",
         "typescript": "^5.3.3",
         "webpack-merge": "^5.10.0"
