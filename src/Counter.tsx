@@ -1,5 +1,6 @@
-import { Button } from 'antd';
 import { useState } from 'react';
+
+import { Button } from '@/components/ui/button';
 
 import './Counter.css';
 

@@ -4,9 +4,15 @@ import { defineConfig } from '@rspack/cli';
 import type { Config as SwcConfig } from '@swc/core';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import { isDev } from './utils.js';
+import { isDev, src } from './utils.js';
 
 const inCwd = (relativePath: string) => resolve(import.meta.dirname, '../../', relativePath);
+const postcssConfig = {
+    loader: 'postcss-loader',
+    options: {
+        sourceMap: isDev,
+    },
+};
 
 export default defineConfig({
     target: ['web', 'es5'],
@@ -19,6 +25,9 @@ export default defineConfig({
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts'],
+        alias: {
+            '@': `${src}`,
+        },
     },
     plugins: [
         // https://github.com/web-infra-dev/rspack/issues/5485#issuecomment-1929030257
@@ -61,11 +70,13 @@ export default defineConfig({
             {
                 test: /\.css$/,
                 type: 'css',
+                use: postcssConfig,
             },
             {
                 test: /\.scss$/,
                 type: 'css',
                 use: [
+                    postcssConfig,
                     {
                         loader: 'sass-loader',
                         options: {

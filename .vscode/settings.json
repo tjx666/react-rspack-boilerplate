@@ -21,6 +21,7 @@
 
     // use stylelint instead
     "css.validate": false,
+    "css.customData": [".vscode/tailwind.json"],
     "stylelint.validate": ["css", "scss"],
 
     // support lint json etc
